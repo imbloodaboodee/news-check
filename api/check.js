@@ -82,9 +82,10 @@ async function handler(req, res) {
 
     return res.status(200).json({
       ok: true,
+      stringToCheck: MATCH_STRING,
       matched,
       emailed,
-      status: r.status,
+      newsStatus: r.status,
       checkedAt: new Date().toISOString(),
     });
   } catch (e) {
