@@ -48,6 +48,14 @@ async function handler(req, res) {
       });
 
       emailed = true;
+      return res.status(500).json({
+        ok: false,
+        stringToCheck: MATCH_STRING,
+        matched,
+        emailed,
+        newsStatus: r.status,
+        checkedAt: new Date().toISOString(),
+      });
     }
     const bodyText =
       typeof r.data === "string" ? r.data : JSON.stringify(r.data);
