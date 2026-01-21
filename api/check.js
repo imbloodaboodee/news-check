@@ -15,9 +15,9 @@ async function handler(req, res) {
     const tokenFromHeader = req.headers?.["x-cron-secret"];
     const token = tokenFromQuery || tokenFromHeader;
 
-    if (token !== CRON_SECRET) {
-      return res.status(401).json({ ok: false, error: "Unauthorized" });
-    }
+    // if (token !== CRON_SECRET) {
+    //   return res.status(401).json({ ok: false, error: "Unauthorized" });
+    // }
 
     const API_URL = mustEnv("API_URL");
     const MATCH_STRING = mustEnv("MATCH_STRING");
